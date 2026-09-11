@@ -1,4 +1,4 @@
-# Ladder Rung 2 — Saturday 12 September 2026
+# Ladder Rung 2 — Friday 11 / Saturday 12 September 2026
 **Bankroll:** $213.50 (rung 1 won: Stuttgart × Arsenal @ 2.135)
 **Target this rung:** ~$449 · **Slates scanned:** Premier League MW4, Saudi Pro League MW7
 
@@ -113,6 +113,45 @@ Egress policy again blocked uefa.com, ESPN, Wikipedia and all sportsbook domains
 confirmed via independent match-page URLs (ESPN gameId, FOX Sports, Sofascore, Forebet).
 **Prices are from search snippets, not a live feed.** Re-verify before staking — and note that
 the Al Nassr leg has no verified price at all.
+
+---
+
+## 8. Friday 11 September — Card Checked, Rung Not Recommended
+
+Re-scanned for a same-day rung. **Today's card cannot support a two-leg parlay at ~2.10.**
+
+| Match | KO | Favourite | Price |
+|---|---|---|---|
+| Union Berlin v Schalke (BL MD3) | 18:30 CEST | Union | 2.30 |
+| Rennes v Marseille (L1) | 20:45 CEST | Rennes | not verified |
+| Venezia v Fiorentina (SA) | 20:45 CEST | — | not verified |
+| Saudi Pro League MW7 | — | — | **fixtures not reliably resolved** |
+
+A 2.10 rung needs two legs at ~1.45. **The shortest verified price anywhere on today's European
+card is 2.30.** Forcing a two-leg parlay from near-even legs gives ~4.84 — a wild overshoot at
+roughly **18.6%** to land, less than half the win rate of the planned rung.
+
+**Saudi MW7 could not be resolved.** Returned fixture lists were self-contradictory (Al Ittihad
+appearing in two simultaneous matches; Al Hilal v Al Shabab listed for today when ESPN records
+that tie as played 4 September, 0-2). No usable fixture, no price, no leg.
+
+### If a bet must be placed today, it is a single — not a parlay
+
+| Option | Pays | Fair p | Bankroll | Vig payments |
+|---|---|---|---|---|
+| Union Berlin single @ 2.30 | 2.300 | ~41.2% | $491.05 | **1** |
+| Saturday parlay @ 2.102 | 2.102 | 41.8% | $448.86 | 2 |
+
+The single is structurally *better* — near-identical win probability for a **9% larger payout**,
+because it buys one leg of margin instead of two, and it overshoots the rung target.
+
+**But the selection is weak.** All three previous league meetings at the Alte Försterei ended in
+draws; both sides have one point from two; Schalke just held Bayern to 0-0. Draw risk is the
+live threat and I could not obtain draw/away prices to de-vig the 2.30 properly — the ~41.2% is
+an estimate, not a measurement.
+
+**Recommendation: skip today, take the Saturday rung in §5.** A ladder has no schedule. Waiting
+one day costs nothing and swaps an unpriceable near-even bet for two verified short favourites.
 
 ## Sources
 
