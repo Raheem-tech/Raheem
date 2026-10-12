@@ -7,35 +7,70 @@
 
 ## Pick
 
-**No bet.** Closest candidate: **Under 54.5**. At -110 it blends to **+2.9% EV**, just short of the +3% bar.
+**Under 54.5 (-105, DraftKings), 1 unit (1% of bankroll).** This is the strongest-supported bet. It blends to **+4.0% EV**, which clears the +3% bar.
 
-**Trigger:** bet 1 unit (1% of bankroll) on the Under only if one of these holds when the inactives are posted (~6:45 PM ET):
-- DJ Moore is **inactive** and DraftKings still has 54.5 at -110 (blended EV +4.0%), **or**
-- DraftKings offers Under 54.5 at -108 or better (+3.3%), **or**
-- DraftKings offers Under 55 at -110 (+3.9%).
+The first version of this analysis assumed the total was priced at -110 and returned "No bet" (+2.9%). The actual DraftKings quote is **O -115 / U -105** (SI, Bleacher Nation); VegasInsider shows O -118 / U -102. That price satisfies the trigger set in the first version (-108 or better).
+
+**Bet only if the Under is -108 or better at 54.5 (or -110 at 55).** At -110 / 54.5 it falls back to +2.9%. Check the price in the app; the quotes come from article snapshots.
 
 ---
 
-## Estimate vs. Price
+## Independent Estimates vs. Available Prices
 
-Blend = **40% model / 60% DraftKings no-vig market**. EV is computed at the DraftKings price.
+The first version anchored its cover and win probabilities to DraftKings' no-vig line. This version derives every probability **from the model alone**:
+- **Side:** a key-number-weighted NFL margin distribution (normal, SD 13.5, reweighted to post-2015 final-margin frequencies; 3 ≈ 14.5%, 7 ≈ 9.4%) centered on the fair spread.
+- **Total:** a normal distribution with SD 13.5.
+- **Calibration:** at a mean of 3.0 the favorite wins 58.7%. DK's -3.5 (-102) implies a mean margin of 3.53 and a 60.2% Rams win, against DK's no-vig moneyline of 60.9%.
 
-| Market | DK price | Break-even | Model | DK no-vig | Blended | EV |
-|---|---|---|---|---|---|---|
-| Rams -3.5 | -102 | 50.5% | 52.5% | 48.3% | 50.0% | -1.0% |
-| Bills +3.5 | -118 | 54.1% | 47.5% | 51.7% | 50.0% | -7.6% |
-| Rams ML | -175 | 63.6% | 64.1% | 60.9% | 62.2% | -2.3% |
-| Bills ML | +145 | 40.8% | 35.9% | 39.1% | 37.8% | -7.3% |
-| **Under 54.5** | -110 (assumed) | 52.4% | 59.7% | 50.0% | 53.9% | **+2.9%** |
-| Over 54.5 | -110 (assumed) | 52.4% | 40.3% | 50.0% | 46.1% | -12.0% |
-
-| Fair number | Model | Market |
+### Fair numbers (independent)
+| | Model | Market (DK) |
 |---|---|---|
-| Spread | **Rams -4.5** (range -4.0 to -4.75) | Rams -3.5 (-102) ≈ fair -3.1 |
-| Total | **51.2** | 54.5 |
-| Rams win % | **64.1%** (fair ML -178) | 60.9% (no-vig of -175/+145) |
+| Spread | **Rams -4.5** (range -3.7 to -5.4 across 108 scenarios) | Rams -3.5 (-102) → implied mean margin 3.5 |
+| Total | **51.2** (range 50.0 to 52.8) | 54.5, priced toward the Over (O -115) |
+| Team totals | **LAR 27.8 / BUF 23.3** | not found |
+| Rams win % | **62.9%** (fair ML -170 / +170) | 60.9% |
+| P(Rams cover -3.5) | **51.1%** (fair price -105) | 48.3% |
+| P(Under 54.5) | **59.7%** (fair price -148) | 48.9% |
 
-*The DraftKings total price was not provided and could not be confirmed. VSiN's Sunday DK quote was O54.5 -115 / U54.5 -105. At that price the Under blends to +3.9%.*
+### Price comparison (best available quotes)
+**Indep EV** is EV using the model probability alone. **Blended EV** uses 40% model / 60% that book's no-vig price.
+
+| Bet | Book | Price | Break-even | Model | Indep EV | Market no-vig | **Blended EV** |
+|---|---|---|---|---|---|---|---|
+| **Under 54.5** | **DK** | **-105** | 51.2% | 59.7% | +16.6% | 48.9% | **+4.0%** |
+| Under 54.5 | DK (VegasInsider) | -102 | 50.5% | 59.7% | +18.3% | 48.3% | +4.7% |
+| Under 54.5 | FanDuel | -110 | 52.4% | 59.7% | +14.1% | 50.0% | +2.9% |
+| Rams -3.5 | DK / BetMGM | -102 | 50.5% | 51.1% | +1.3% | 48.3% | -2.1% |
+| Rams -3.5 | FanDuel | -104 | 51.0% | 51.1% | +0.3% | 48.5% | -2.8% |
+| Rams ML | DK / BetMGM | -175 | 63.6% | 62.9% | -1.1% | 60.9% | -3.0% |
+| Rams ML | Caesars | -176 | 63.8% | 62.9% | -1.3% | 61.2% | -3.0% |
+| Bills ML | FanDuel | +152 | 39.7% | 37.1% | -6.6% | 38.2% | -4.9% |
+| Bills +3.5 | best | -115 | 53.5% | 48.9% | -8.6% | 51.1% | -6.2% |
+| Over 54.5 | FanDuel | -110 | 52.4% | 40.3% | -23.1% | 50.0% | -12.0% |
+
+### Robustness (108 scenarios)
+The grid varies four inputs: home field (1.0 / 1.5 / 2.0), preseason weight (60 / 70 / 80%), DJ Moore (in / 50-50 / out), and the total prior (49.5 / 50.5 / 51.5 / 52.5).
+
+| Bet | Indep EV > 0 | Blended EV > 0 | Blended ≥ +3% | Blended EV range (median) |
+|---|---|---|---|---|
+| **Under 54.5 (-105)** | **100%** | **100%** | **53%** | +0.3% to +6.6% (+3.1%) |
+| Rams -3.5 (-102) | 63% | 0% | 0% | -4.1% to -0.2% (-2.1%) |
+| Rams ML (-175) | 33% | 0% | 0% | -4.5% to -1.5% (-3.0%) |
+| Bills +3.5 (-115) | 0% | 0% | 0% | -8.0% to -4.3% (-6.2%) |
+
+### Why the Under is the strongest-supported bet
+- **Largest, most consistent model edge.** The fair total of 51.2 is 3.3 points under the market, and every scenario's fair total (50.0–52.8) sits below 54.5.
+- **Outside models agree.** SportsLine's model (10,000 simulations) and Dimers both lean Under 54.5. Scores&Stats rates the number about 4 points too high on 2025 scoring.
+- **Price edge:** DraftKings' juice shading toward the Over makes the Under cheaper (-105 / -102) than at FanDuel (-110).
+- **What weakens it:**
+  - The market is moving the other way. Tickets and handle are ~70–75% on the Over, the total rose 53.5 → 54.5, and ESPN's analyst likes the Over.
+  - The edge leans on a 2025-based prior. With a 52.5 prior, the blended EV falls to about +0.8%.
+  - Only 53% of scenarios clear +3%, though all 108 stay positive. Treat it as a minimum-size bet.
+
+### Why not the Rams
+- The side has the best market support: Circa shows 87–88% of the money on the Rams, and the line moved through 3 against the tickets. The model agrees in direction, with a fair line of -3.7 to -5.4 in every scenario.
+- But the sharp move already happened. Going from a mean of 3.5 to 4.5 adds only about 2.8 points of cover probability, because the point gained is 4, not a key number. That leaves +1.3% independent EV and a negative blended EV in every scenario.
+- **Calibration caveat:** the margin distribution under-predicts favorites' straight-up win rates at larger spreads (it gives 69.5% at -7, while the historical rate is ~75%). The true Rams win probability may be 1–2 points above 62.9%. Even so, the Rams moneyline would only reach about +0.5% to +2% independent EV.
 
 ---
 
@@ -134,20 +169,26 @@ The Rams out-gain opponents by **+180 yards/game** and **+1.8 YPP** but their sc
 
 ## 5. EV Rule
 
-No market clears +3% after the 40/60 blend at the posted prices. The Under is closest at +2.9% at -110 (see the trigger above).
+Only one bet clears +3% after the 40/60 blend at an available price: **Under 54.5 at DK -105 (+4.0%)**, or +4.7% at -102 if that quote is live. The same bet at FanDuel -110 blends to +2.9%, which fails.
 
-**Sensitivities (Under 54.5 at -110):**
+**Sensitivities (Under 54.5, blended EV):**
 
-| Scenario | EV |
-|---|---|
-| Moore active | +2.2% |
-| Moore out | +4.0% |
-| Preseason weight 60/40 | +2.0% |
-| Home field 1.0 instead of 1.5 (moves the side only) | Rams -3.5 falls to -2.1% |
+| Scenario | Fair total | DK -105 | FD -110 |
+|---|---|---|---|
+| Base case | 51.2 | +4.0% | +2.9% |
+| Moore active | 51.4 | +3.5% | +2.4% |
+| Moore out | 50.9 | +4.5% | +3.4% |
+| Preseason weight 60/40 | 51.4 | +3.5% | +2.5% |
+| Preseason weight 80/20 | 51.0 | +4.4% | +3.3% |
+| Total prior 49.5 | 50.5 | +5.5% | +4.4% |
+| Total prior 51.5 | 51.9 | +2.4% | +1.4% |
+| Total prior 52.5 | 52.6 | +0.8% | -0.2% |
+
+What decides the bet is the **price** and the **2025-based total prior**, not DJ Moore's status. The Under clears +3% at -105 whether Moore plays or not. If you believe Buffalo's 2026 defense (new head coach Joe Brady, 27th in yards allowed) makes the 2025 scoring baseline stale, use a prior of 51.5 or higher. At that prior, this is a pass.
 
 ---
 
-## 6. Top 3 Ways the Under (Closest Candidate) Loses
+## 6. Top 3 Ways the Under Loses
 
 1. **The Rams finish their drives.** A 427-YPG offense facing a 27th-ranked yardage defense without Ed Oliver lets the 53% red-zone TD rate regress upward, and LAR scores 30+.
 2. **Turnovers create non-offensive or short-field points.** Stafford's 6 INTs include a pick-six, and Buffalo had 5 giveaways in one game. One defensive TD adds 7 points without a drive.
@@ -157,7 +198,11 @@ No market clears +3% after the 40/60 blend at the posted prices. The Under is cl
 
 ## 7. Stake
 
-**0 units at current prices.** If a trigger hits, **1 unit = 1% of bankroll** on the Under. Quarter-Kelly on a ~3.5–4% edge at -110 works out to ~0.9–1.0%.
+**1 unit = 1% of bankroll** on Under 54.5 at -105 or better.
+
+Full Kelly on the blended 53.2% at -105 is 4.1%; quarter-Kelly is ~1.0%.
+
+Do not bet it at -110 or worse at 54.5, or at 54 or lower.
 
 ---
 
@@ -168,6 +213,9 @@ No market clears +3% after the 40/60 blend at the posted prices. The Under is cl
 - **Sources conflict on opening lines:** -2.5 vs. -3; 52.5 vs. 53.5 vs. 54.
 - **Sources conflict on Rams defensive EPA:** -0.16 (Sumer) vs. +0.12 (Sharp).
 - **Opponent adjustment is manual.** No published opponent-adjusted metric (DVOA-style) was retrievable.
-- **The DK total price and official inactives were not available at writing.**
+- **DK total price** comes from article snapshots (SI and Bleacher Nation: O -115 / U -105; VegasInsider: O -118 / U -102), not a live feed.
+- **Official inactives** were not posted at writing; lists are due ~6:45 PM ET.
+- **Team totals:** no team-total prices were found.
+- **Margin distribution:** the key-number frequencies are approximate post-2015 values, not fitted to a dataset.
 
-*Analysis compiled Oct 12, 2026, 4:10 PM ET. Confirm inactives and prices before placing.*
+*Analysis compiled Oct 12, 2026, 4:10 PM ET; independent-estimate update 4:20 PM ET. Confirm inactives and prices before placing.*
